@@ -7,10 +7,12 @@ import ru.chuikov.ObrReiting.entity.User;
 import java.util.List;
 
 public interface UserService {
-    User addUser(User right);
+    User addUser(User user);
     void delete(long id);
-    User getByName(String name);
+    User getByLogin(String login);
+    User getByToken(String token);
+    User getByMail(String mail);
     User getById(long id);
-    User editUser(User right);
+    User editUser(User user);
     List<User> getAll();
 }
