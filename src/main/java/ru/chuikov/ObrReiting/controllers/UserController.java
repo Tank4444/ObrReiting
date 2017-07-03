@@ -24,8 +24,8 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
-    private String login="login";
-    private String password="password";
+    private String login="anton";
+    private String password="admin";
     private String token="token";
     private String mail="mail";
     private int inc=1;
