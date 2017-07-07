@@ -23,6 +23,9 @@ public class Institute {
     @Column(name = "address")
     private String address;
 
+    @Column(name = "name")
+    private String name;
+
     @ManyToMany
     @JoinTable(name = "institutes_chairs",
     joinColumns = @JoinColumn(name = "institutes_id",referencedColumnName = "id"),
@@ -69,6 +72,12 @@ public class Institute {
     }
     public void setTeachers(Set<Teacher> teachers) {
         this.teachers = teachers;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     //Contractors

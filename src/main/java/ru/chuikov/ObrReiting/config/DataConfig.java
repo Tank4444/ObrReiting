@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.devcolibri.dataexam")
+@ComponentScan("ru.chuikov.ObrReiting")
 @PropertySource("classpath:app.properties")
 @EnableJpaRepositories("ru.chuikov.ObrReiting.repository")
 public class DataConfig  {
