@@ -9,10 +9,13 @@ import java.util.List;
 public interface InstituteService {
     Institute addInstitute(Institute institute);
     void delete(long id);
-    Institute getByName(String name);
     Institute getById(long id);
-    List<Institute> getByAddress(String address);
     Institute editInstitute(Institute institute);
     List<Institute> getAll();
+    List<Institute> getByCity(String city);
+    List<Institute> getByAddress(String address);
+    List<Institute> getByName(String na);
+    List<Institute> getByNameAndCity(String name,String city);
+
 
 }

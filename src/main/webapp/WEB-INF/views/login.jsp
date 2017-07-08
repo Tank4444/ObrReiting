@@ -8,7 +8,6 @@
     <meta name="author" content="">
 
     <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 </head>
 <body>
 <div class="container" style="width: 300px;">

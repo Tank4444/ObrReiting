@@ -14,7 +14,7 @@ import java.util.List;
 public interface InstituteRepository extends JpaRepository<Institute,Long> {
 
     @Query("select b from Institute b where b.name = :name")
-    Institute findByName(@Param("name") String name);
+    List<Institute> findByName(@Param("name") String name);
 
     @Query("select b from Institute b where b.id = :id")
     Institute findById(@Param("id") long id);
@@ -33,4 +33,10 @@ public interface InstituteRepository extends JpaRepository<Institute,Long> {
 
     @Query("select b from Institute b where b.address = :aname")
     List<Institute> findByAddress(@Param("aname") String aname);
+
+    @Query("select b from Institute b where b.address = :aname and b.city=:cname")
+    List<Institute> findByCityAndAddress(@Param("aname") String aname,@Param("cname") String cname);
+
+    @Query("select b from Institute b where b.name = :name and b.city=:cname")
+    List<Institute> findByNameAndCity(@Param("name") String name,@Param("cname") String cname);
 }

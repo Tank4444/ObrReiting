@@ -21,8 +21,12 @@ public class InstituteServiceImpl implements InstituteService {
         instituteRepository.delete(id);
     }
 
-    public Institute getByName(String name) {
+    public List<Institute> getByName(String name) {
         return instituteRepository.findByName(name);
+    }
+
+    public List<Institute> getByNameAndCity(String name, String city) {
+        return instituteRepository.findByNameAndCity(name,city);
     }
 
     public Institute getById(long id) {
@@ -39,6 +43,10 @@ public class InstituteServiceImpl implements InstituteService {
 
     public List<Institute> getAll() {
         return instituteRepository.findAll();
+    }
+
+    public List<Institute> getByCity(String city) {
+        return instituteRepository.findByCity(city);
     }
 
 

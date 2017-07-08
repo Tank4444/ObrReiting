@@ -28,6 +28,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
         registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/img/");
         registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/fonts/");
+        registry.addResourceHandler("/mdl/**").addResourceLocations("/WEB-INF/mdl/");
     }
 
     @Bean
@@ -38,5 +39,6 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         resolver.setViewClass(JstlView.class);
         return resolver;
     }
+    
 
 }

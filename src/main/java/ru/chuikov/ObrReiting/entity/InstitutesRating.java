@@ -42,12 +42,16 @@ public class InstitutesRating {
     //Const
     public InstitutesRating(User user, int mark) {
         this.user = user;
-        this.mark = mark;
+        if(mark<0)this.mark=0;
+        else if(mark>10)this.mark=10;
+        else this.mark=mark;
     }
     public InstitutesRating(Institute institute, int mark) {
 
         this.institute = institute;
-        this.mark = mark;
+        if(mark<0)this.mark=0;
+        else if(mark>10)this.mark=10;
+        else this.mark=mark;
     }
     public InstitutesRating(User user, Institute institute) {
 
@@ -56,7 +60,9 @@ public class InstitutesRating {
     }
     public InstitutesRating(int mark) {
 
-        this.mark = mark;
+        if(mark<0)this.mark=0;
+        else if(mark>10)this.mark=10;
+        else this.mark=mark;
     }
     public InstitutesRating(Institute institute) {
 

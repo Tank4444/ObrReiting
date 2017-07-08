@@ -1,44 +1,48 @@
 package ru.chuikov.ObrReiting.services.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.chuikov.ObrReiting.entity.Institute;
 import ru.chuikov.ObrReiting.entity.InstitutesReview;
 import ru.chuikov.ObrReiting.entity.User;
+import ru.chuikov.ObrReiting.repository.InstitutesReviewRepository;
 import ru.chuikov.ObrReiting.services.InstitutesReviewService;
 
 import java.util.List;
 
 @Service("InstitutesReview")
 public class InstitutesReviewServiceImpl implements InstitutesReviewService {
+    @Autowired
+    private InstitutesReviewRepository institutesReviewRepository;
     public InstitutesReview addReview(InstitutesReview institutesReview) {
-        return null;
+        return institutesReviewRepository.saveAndFlush(institutesReview);
     }
 
     public InstitutesReview editReview(InstitutesReview institutesReview) {
-        return null;
+        return institutesReviewRepository.saveAndFlush(institutesReview);
     }
 
     public List<InstitutesReview> getAll() {
-        return null;
+        return institutesReviewRepository.findAll();
     }
 
     public List<InstitutesReview> getModerated() {
-        return null;
+        return institutesReviewRepository.findByModerated();
     }
 
     public List<InstitutesReview> getUnModerated() {
-        return null;
+        return institutesReviewRepository.findByUnModerated();
     }
 
     public List<InstitutesReview> getByUser(User user) {
-        return null;
+        return institutesReviewRepository.findByUser(user);
     }
 
     public List<InstitutesReview> getByInstitute(Institute institute) {
-        return null;
+        return institutesReviewRepository.findByInstitute(institute);
     }
 
     public InstitutesReview getByUserAndInstitution(User user, Institute institute) {
-        return null;
+        return institutesReviewRepository.findByUserAndInstitute(user,institute);
     }
 }

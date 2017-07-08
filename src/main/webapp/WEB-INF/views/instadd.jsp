@@ -4,19 +4,19 @@
     <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 --%>
 <html>
-    <head>
-        <title>Образовательный рейтинг</title>
-        <script src="<c:url value="/mdl/material.min.css" />"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="<c:url value="/mdl/material.min.css" />">
-    </head>
+<head>
+    <title>Добавление института</title>
+    <script src="<c:url value="/mdl/material.min.css" />"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="<c:url value="/mdl/material.min.css" />">
+</head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Образовательный рейтинг</span>
+            <span class="mdl-layout-title">Добавление института</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -24,13 +24,20 @@
                 <a class="mdl-navigation__link" href="/">Главная</a>
                 <a class="mdl-navigation__link" href="/inst">Найти институт</a>
                 <a class="mdl-navigation__link" href="/teacher">Найти преподавателя</a>
-                <a class="mdl-navigation__link" href="/reg">Регистрация</a>
                 <a class="mdl-navigation__link" href="/us">О нас</a>
             </nav>
         </div>
     </header>
     <main class="mdl-layout__content">
         <div class="page-content"><!-- Your content goes here -->
+
+            <form method="post" action="/inst/addInst">
+                <p><input type="text" name="name"> Название </p>
+                <p><input type="text" name="city"> Город </p>
+                <p><input type="text" name="address"> Адресс </p>
+                <p><input type="text" name="login"> Имя пользователя </p>
+                <p><input type="submit"></p>
+            </form>
 
         </div>
     </main>

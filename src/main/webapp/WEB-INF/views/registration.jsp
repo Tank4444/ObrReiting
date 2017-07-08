@@ -1,15 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%--
-    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
---%>
+
 <html>
-    <head>
-        <title>Образовательный рейтинг</title>
-        <script src="<c:url value="/mdl/material.min.css" />"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="<c:url value="/mdl/material.min.css" />">
-    </head>
+<head>
+    <title>Образовательный рейтинг</title>
+    <script src="<c:url value="/mdl/material.min.css" />"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="<c:url value="/mdl/material.min.css" />">
+</head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -31,7 +29,12 @@
     </header>
     <main class="mdl-layout__content">
         <div class="page-content"><!-- Your content goes here -->
-
+            <form method="post" action="/reg">
+                <p><input type="text" name="login"> Login </p>
+                <p><input type="password" name="password"> Password </p>
+                <p><input type="text" name="mail"> Mail </p>
+                <p><input type="submit"></p>
+            </form>
         </div>
     </main>
 </div>

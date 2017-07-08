@@ -44,7 +44,9 @@ public class TeachersRating {
     public TeachersRating(User user, Teacher teacher, int mark) {
         this.user = user;
         this.teacher = teacher;
-        this.mark = mark;
+        if(mark<0)this.mark=0;
+        else if(mark>10)this.mark=10;
+        else this.mark=mark;
     }
     public TeachersRating(User user, Teacher teacher) {
         this.user = user;
@@ -52,7 +54,9 @@ public class TeachersRating {
     }
     public TeachersRating(int mark) {
 
-        this.mark = mark;
+        if(mark<0)this.mark=0;
+        else if(mark>10)this.mark=10;
+        else this.mark=mark;
     }
     public TeachersRating(Teacher teacher) {
 

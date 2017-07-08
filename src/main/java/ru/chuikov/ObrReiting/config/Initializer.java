@@ -28,4 +28,5 @@ public class Initializer implements WebApplicationInitializer {
         servlet.setLoadOnStartup(1);
 
     }
+
 }

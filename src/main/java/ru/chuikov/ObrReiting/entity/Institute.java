@@ -26,13 +26,13 @@ public class Institute {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name = "institutes_chairs",
     joinColumns = @JoinColumn(name = "institutes_id",referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "chairs_id",referencedColumnName = "id"))
     private Set<Chair> chairs;
 
-    @OneToMany
+    @OneToMany(fetch=FetchType.EAGER)
     @JoinColumn(name = "teachers_id")
     private Set<Teacher> teachers;
 
