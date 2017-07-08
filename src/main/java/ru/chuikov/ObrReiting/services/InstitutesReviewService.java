@@ -10,10 +10,11 @@ import java.util.List;
 public interface InstitutesReviewService {
     InstitutesReview addReview(InstitutesReview institutesReview);
     InstitutesReview editReview(InstitutesReview  institutesReview);
+    InstitutesReview getById(long id);
     List<InstitutesReview> getAll();
     List<InstitutesReview> getModerated();
     List<InstitutesReview> getUnModerated();
     List<InstitutesReview> getByUser(User user);
     List<InstitutesReview> getByInstitute(Institute institute);
-    InstitutesReview getByUserAndInstitution(User user, Institute institute);
+    List<InstitutesReview> getByUserAndInstitution(User user, Institute institute);
 }

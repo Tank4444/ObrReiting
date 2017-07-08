@@ -11,7 +11,10 @@ import ru.chuikov.ObrReiting.entity.keys.InstitutionsRaitongKeys;
 
 import java.util.List;
 
-public interface InstitutesReviewRepository extends JpaRepository<InstitutesReview,InstitutionsRaitongKeys> {
+public interface InstitutesReviewRepository extends JpaRepository<InstitutesReview,Long> {
+
+    @Query("select b from InstitutesReview b where b.id = :id")
+    InstitutesReview findById(@Param("id") long id);
 
     @Query("select b from InstitutesReview b where b.user = :name")
     List<InstitutesReview> findByUser(@Param("name")User user);
@@ -20,7 +23,7 @@ public interface InstitutesReviewRepository extends JpaRepository<InstitutesRevi
     List<InstitutesReview> findByInstitute(@Param("name")Institute institute);
 
     @Query("select b from InstitutesReview b where b.user=:uname and b.institute=:iname")
-    InstitutesReview findByUserAndInstitute(@Param("uname") User user,@Param("iname") Institute institute);
+    List<InstitutesReview> findByUserAndInstitute(@Param("uname") User user,@Param("iname") Institute institute);
 
     @Query("select b from InstitutesReview b where b.moderated = true ")
     List<InstitutesReview> findByModerated();

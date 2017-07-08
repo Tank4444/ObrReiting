@@ -29,13 +29,16 @@
         </div>
     </header>
     <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here -->
+        <div class="page-content" align="center"><!-- Your content goes here -->
 
             <form method="post" action="/inst/addInst">
                 <p><input type="text" name="name"> Название </p>
                 <p><input type="text" name="city"> Город </p>
                 <p><input type="text" name="address"> Адресс </p>
-                <p><input type="text" name="login"> Имя пользователя </p>
+                Кафедры:
+                <c:forEach items="${listChair}" var="chair">
+                    <input type="checkbox" name="chair" value="${chair.id}">${chair.name}<<br>
+                </c:forEach>
                 <p><input type="submit"></p>
             </form>
 

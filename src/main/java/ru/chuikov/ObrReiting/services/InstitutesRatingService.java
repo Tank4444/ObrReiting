@@ -9,7 +9,8 @@ import java.util.List;
 
 public interface InstitutesRatingService {
     InstitutesRating addInstitutesRating(InstitutesRating institute);
-    InstitutesRating getByUserAndInstitution(User user, Institute institute);
+    InstitutesRating getById(long id);
+    List<InstitutesRating>  getByUserAndInstitution(User user, Institute institute);
     List<InstitutesRating> getByUser(User user);
     List<InstitutesRating> getByInstitute(Institute institute);
     InstitutesRating editInstitutesRating(InstitutesRating institutesRating);

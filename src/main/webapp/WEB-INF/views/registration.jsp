@@ -28,7 +28,7 @@
         </div>
     </header>
     <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here -->
+        <div class="page-content" align="center"><!-- Your content goes here -->
             <form method="post" action="/reg">
                 <p><input type="text" name="login"> Login </p>
                 <p><input type="password" name="password"> Password </p>

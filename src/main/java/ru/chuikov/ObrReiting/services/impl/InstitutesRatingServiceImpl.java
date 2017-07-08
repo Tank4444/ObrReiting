@@ -22,7 +22,11 @@ public class InstitutesRatingServiceImpl implements InstitutesRatingService{
         return institutesRatingRepository.saveAndFlush(institute);
     }
 
-    public InstitutesRating getByUserAndInstitution(User user, Institute institute) {
+    public InstitutesRating getById(long id) {
+        return institutesRatingRepository.findById(id);
+    }
+
+    public List<InstitutesRating> getByUserAndInstitution(User user, Institute institute) {
         return institutesRatingRepository.findByUserAndInstitute(user,institute);
     }
 

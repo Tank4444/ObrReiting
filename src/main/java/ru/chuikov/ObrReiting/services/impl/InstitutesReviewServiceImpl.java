@@ -14,12 +14,17 @@ import java.util.List;
 public class InstitutesReviewServiceImpl implements InstitutesReviewService {
     @Autowired
     private InstitutesReviewRepository institutesReviewRepository;
+
     public InstitutesReview addReview(InstitutesReview institutesReview) {
         return institutesReviewRepository.saveAndFlush(institutesReview);
     }
 
     public InstitutesReview editReview(InstitutesReview institutesReview) {
         return institutesReviewRepository.saveAndFlush(institutesReview);
+    }
+
+    public InstitutesReview getById(long id) {
+        return institutesReviewRepository.findById(id);
     }
 
     public List<InstitutesReview> getAll() {
@@ -42,7 +47,7 @@ public class InstitutesReviewServiceImpl implements InstitutesReviewService {
         return institutesReviewRepository.findByInstitute(institute);
     }
 
-    public InstitutesReview getByUserAndInstitution(User user, Institute institute) {
+    public List<InstitutesReview> getByUserAndInstitution(User user, Institute institute) {
         return institutesReviewRepository.findByUserAndInstitute(user,institute);
     }
 }

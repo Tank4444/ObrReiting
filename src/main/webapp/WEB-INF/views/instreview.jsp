@@ -6,12 +6,9 @@
 <html>
 <head>
     <title>Отзывы об институте</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="mdl/material.min.js"></script>
-
-    <link rel="stylesheet" href="mdl/material.min.css">
+    <script src="<c:url value="/mdl/material.min.css" />"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <meta charset="utf-8">
+    <link rel="stylesheet" href="<c:url value="/mdl/material.min.css" />">
 
 </head>
 <body>
@@ -33,10 +30,37 @@
         </div>
     </header>
     <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here -->
-
-
-
+        <div class="page-content" align="center"><!-- Your content goes here -->
+            <form method="post" action="/instReview/add/${inst.id}">
+                <p>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <label class="mdl-textfield__label" for="sample1">Текст...</label>
+                        <textarea class="mdl-textfield__input" type="text" rows= "10" id="sample1" name="text"></textarea>
+                    </div>
+                </p>
+                <p>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <label class="mdl-textfield__label" for="sample2">Логин</label>
+                        <input class="mdl-textfield__input" type="text" id="sample2" name="login">
+                    </div>
+                </p>
+                <p>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <label class="mdl-textfield__label" for="sample3">Пароль</label>
+                        <input class="mdl-textfield__input" type="password" id="sample3" name="password">
+                    </div>
+                </p>
+                <p>
+                    Оценка:
+                </p>
+                <p>
+                    <input class="mdl-slider mdl-js-slider" type="range" name="mark"
+                           min="0" max="10" value="5" tabindex="0">
+                </p>
+                <p>
+                    <input type="submit">
+                </p>
+            </form>
         </div>
     </main>
 </div>

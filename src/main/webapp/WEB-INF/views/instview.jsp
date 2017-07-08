@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="ru.chuikov.ObrReiting.entity.Institute" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%--
@@ -29,29 +31,30 @@
         </div>
     </header>
     <main class="mdl-layout__content">
-        <div class="page-content"><!-- Your content goes here -->
+        <div class="page-content" align="center"><!-- Your content goes here -->
             <p>Уникальный номер: ${inst.id}</p>
             <p>Название института: ${inst.name}</p>
             <p>Город: ${inst.city}</p>
             <p>Адрес: ${inst.address}</p>
             <p>Кафедры: </p>
             <ul class="mdl-list">
-                <c:forEach var="chair" items="${inst.chairs}">
+                <c:forEach var="chair" items="${listChairs}">
                     <li class="mdl-list_item">${chair.name}</li>
                 </c:forEach>
             </ul>
+
             <div class="mdl-grid">
                 <c:forEach var="el" items="${listReview}">
                     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
                         <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text">${el.user.name}</h2>
+                            <h2 class="mdl-card__title-text">${el.user.login}</h2>
                         </div>
                         <div class="mdl-card__supporting-text">
                             ${el.text}
-                            <br>
-                            <c:forEach var="rating" items="$listRating">
-                                <c:if test="${rating.user.id eq el.user.id}">
-                                    <p>Оценка: ${rating.mark}</p>
+                            <hr>
+                            <c:forEach items="${listRating}" var="rat">
+                                <c:if test="${rat.user.login eq el.user.login}">
+                                    Оценка: ${rat.mark}
                                 </c:if>
                             </c:forEach>
                         </div>
@@ -59,13 +62,12 @@
                     </div>
                 </c:forEach>
 
-
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Добавить новый отзыв</h2>
                     </div>
                     <div class="mdl-card__actions">
-                        <a href="/inst/add">Добавить</a>
+                        <a href="/instReview/add/${inst.id}">Добавить</a>
                     </div>
                 </div>
             </div>

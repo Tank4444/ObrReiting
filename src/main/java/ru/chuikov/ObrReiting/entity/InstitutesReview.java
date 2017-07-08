@@ -6,14 +6,20 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "institutesReviews")
-@IdClass(InstitutionsRaitongKeys.class)
 public class InstitutesReview {
+
     @Id
-    @AttributeOverrides({
-            @AttributeOverride(name = "user",column = @Column(name = "users_id")),
-            @AttributeOverride(name = "institute",column = @Column(name = "institutes_id"))
-    })
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private long id;
+
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name="users_id")
     private User user;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name="institutes_id")
     private Institute institute;
 
     @Column(name = "text")
@@ -45,6 +51,14 @@ public class InstitutesReview {
     }
     public void setModerated(boolean moderated) {
         this.moderated = moderated;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     //Const
