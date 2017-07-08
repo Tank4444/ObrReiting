@@ -30,17 +30,36 @@
     </header>
     <main class="mdl-layout__content">
         <div class="page-content" align="center"><!-- Your content goes here -->
-
-            <form method="post" action="/inst/addInst">
-                <p><input type="text" name="name"> Название </p>
-                <p><input type="text" name="city"> Город </p>
-                <p><input type="text" name="address"> Адресс </p>
-                Кафедры:
-                <c:forEach items="${listChair}" var="chair">
-                    <input type="checkbox" name="chair" value="${chair.id}">${chair.name}<<br>
-                </c:forEach>
-                <p><input type="submit"></p>
-            </form>
+            <c:if test="${!edit}">
+                <form method="post" action="/inst/addInst">
+                    <p><input type="text" name="name"> Название </p>
+                    <p><input type="text" name="city"> Город </p>
+                    <p><input type="text" name="address"> Адресс </p>
+                    Кафедры:
+                    <c:forEach items="${listChair}" var="chair">
+                        <input type="checkbox" name="chair" value="${chair.id}">${chair.name}<br>
+                    </c:forEach>
+                    <p><input type="submit"></p>
+                </form>
+            </c:if>
+            <c:if test="${edit}">
+                <form method="post" action="/inst/editInst">
+                    <input type="hidden" name="id" value="${inst.id}">
+                    <p><input type="text" name="name" value="${inst.name}"> Название </p>
+                    <p><input type="text" name="city" value="${inst.city}"> Город </p>
+                    <p><input type="text" name="address" value="${inst.address}"> Адресс </p>
+                    Кафедры:
+                    <c:forEach items="${listChairs}" var="chair">
+                        <c:if test="${chair.value eq 'yes'}">
+                            <input type="checkbox" name="chair" value="${chair.key.id}" checked>${chair.key.name}<br>
+                        </c:if>
+                        <c:if test="${chair.value eq 'no'}">
+                            <input type="checkbox" name="chair" value="${chair.key.id}">${chair.key.name}<br>
+                        </c:if>
+                    </c:forEach>
+                    <p><input type="submit"></p>
+                </form>
+            </c:if>
 
         </div>
     </main>

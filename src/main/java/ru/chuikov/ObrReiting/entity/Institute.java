@@ -30,11 +30,11 @@ public class Institute {
     @JoinTable(name = "institutes_chairs",
     joinColumns = @JoinColumn(name = "institutes_id",referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "chairs_id",referencedColumnName = "id"))
-    private Set<Chair> chairs;
+    private List<Chair> chairs;
 
     @OneToMany(fetch=FetchType.EAGER)
     @JoinColumn(name = "teachers_id")
-    private Set<Teacher> teachers;
+    private List<Teacher> teachers;
 
     //Gettesr and Setters
     public long getId() {
@@ -61,16 +61,16 @@ public class Institute {
     public void setAddress(String address) {
         this.address = address;
     }
-    public Set<Chair> getChairs() {
+    public List<Chair> getChairs() {
         return chairs;
     }
-    public void setChairs(Set<Chair> chairs) {
+    public void setChairs(List<Chair> chairs) {
         this.chairs = chairs;
     }
-    public Set<Teacher> getTeachers() {
+    public List<Teacher> getTeachers() {
         return teachers;
     }
-    public void setTeachers(Set<Teacher> teachers) {
+    public void setTeachers(List<Teacher> teachers) {
         this.teachers = teachers;
     }
     public String getName() {
@@ -84,21 +84,6 @@ public class Institute {
     public Institute(User user) {
 
         this.user = user;
-    }
-    public Institute(String city, User user, String address, Set<Chair> chairs, Set<Teacher> teachers) {
-
-        this.city = city;
-        this.user = user;
-        this.address = address;
-        this.chairs = chairs;
-        this.teachers = teachers;
-    }
-    public Institute(String city, User user, String address, Set<Chair> chairs) {
-
-        this.city = city;
-        this.user = user;
-        this.address = address;
-        this.chairs = chairs;
     }
     public Institute(String city, User user, String address) {
 
