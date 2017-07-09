@@ -7,7 +7,7 @@ import ru.chuikov.ObrReiting.entity.Chair;
 import ru.chuikov.ObrReiting.entity.Institute;
 import ru.chuikov.ObrReiting.entity.Teacher;
 import ru.chuikov.ObrReiting.entity.User;
-import ru.chuikov.ObrReiting.entity.keys.InstitutionsRaitongKeys;
+
 
 import java.util.List;
 

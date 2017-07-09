@@ -18,7 +18,7 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Добавление института</span>
+            <span class="mdl-layout-title">Информация об институте</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -42,7 +42,7 @@
                     <li class="mdl-list_item">${chair.name}</li>
                 </c:forEach>
             </ul>
-
+            <p>Средняя оценка: ${mark}</p>
             <div class="mdl-grid">
                 <c:forEach var="el" items="${listReview}">
                     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">

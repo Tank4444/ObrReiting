@@ -45,4 +45,17 @@ public class InstitutesRatingServiceImpl implements InstitutesRatingService{
     public List<InstitutesRating> getAll() {
         return institutesRatingRepository.findAll();
     }
+
+    public int getSrednee(Institute institute)
+    {
+        int n=0,mark=0;
+        List<InstitutesRating> list=this.getByInstitute(institute);
+        for(int i=0;i<list.size();i++)
+        {
+            mark=mark+list.get(i).getMark();
+            n++;
+        }
+        if(n==0) return 0;
+        else return mark/n;
+    }
 }

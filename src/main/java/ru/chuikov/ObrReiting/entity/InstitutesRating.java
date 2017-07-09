@@ -1,8 +1,8 @@
 package ru.chuikov.ObrReiting.entity;
 
-import ru.chuikov.ObrReiting.entity.keys.InstitutionsRaitongKeys;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "institutesRatings")
@@ -87,4 +87,6 @@ public class InstitutesRating {
     public InstitutesRating() {
 
     }
+
+
 }

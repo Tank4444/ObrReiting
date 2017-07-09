@@ -93,6 +93,8 @@ public class InstituteController {
     {
         ModelAndView mav=new ModelAndView();
         mav.setViewName("instview");
+        int sred=institutesRatingService.getSrednee(instituteService.getById(id));
+        mav.addObject("mark",sred);
         mav.addObject("inst",instituteService.getById(id));
         mav.addObject("listReview",institutesReviewService.getByInstitute(instituteService.getById(id)));
         mav.addObject("listRating",institutesRatingService.getByInstitute(instituteService.getById(id)));
